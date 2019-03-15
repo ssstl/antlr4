@@ -208,3 +208,5 @@ script:
     rc=$?;
     cat target/surefire-reports/*.dumpstream || true;
     exit $rc
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
